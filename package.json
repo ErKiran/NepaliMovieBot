@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/ErKiran/NepaliMovieBot/issues"
   },
-  "homepage": "https://github.com/ErKiran/NepaliMovieBot#readme"
+  "homepage": "https://github.com/ErKiran/NepaliMovieBot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
 }
