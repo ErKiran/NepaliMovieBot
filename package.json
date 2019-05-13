@@ -1,0 +1,27 @@
+{
+  "name": "nepalimovie",
+  "version": "1.0.0",
+  "description": "Telegram Bot for Nepali Movie Lovers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErKiran/NepaliMovieBot.git"
+  },
+  "keywords": [
+    "Telegram",
+    "Bot",
+    "Nepali",
+    "Movies",
+    "Nepali",
+    "Bot"
+  ],
+  "author": "Kiran Adhikari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErKiran/NepaliMovieBot/issues"
+  },
+  "homepage": "https://github.com/ErKiran/NepaliMovieBot#readme"
+}
