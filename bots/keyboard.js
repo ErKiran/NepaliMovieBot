@@ -13,19 +13,19 @@ module.exports = {
             [{
                 text: '1+',
                 callback_data: JSON.stringify({
-                    query: 1
+                    query: 'star_1'
                 })
             },
             {
                 text: '2+',
                 callback_data: JSON.stringify({
-                    query: 2
+                    query: 'star_2'
                 })
             },
             {
                 text: '3+',
                 callback_data: JSON.stringify({
-                    query: 3
+                    query: 'star_3'
                 })
             },
 
@@ -33,38 +33,38 @@ module.exports = {
             [{
                 text: '4+',
                 callback_data: JSON.stringify({
-                    query: 4
+                    query: 'star_4'
                 })
             },
             {
                 text: '5+',
                 callback_data: JSON.stringify({
-                    query: 5
+                    query: 'star_5'
                 })
             },
             {
                 text: '6+',
                 callback_data: JSON.stringify({
-                    query: 6
+                    query: 'star_6'
                 })
             },
             ],
             [{
                 text: '7+',
                 callback_data: JSON.stringify({
-                    query: 7
+                    query: 'star_7'
                 })
             },
             {
                 text: '8+',
                 callback_data: JSON.stringify({
-                    query: 8
+                    query: 'star_8'
                 })
             },
             {
                 text: '9+',
                 callback_data: JSON.stringify({
-                    query: 9
+                    query: 'star_9'
                 })
             },],
 

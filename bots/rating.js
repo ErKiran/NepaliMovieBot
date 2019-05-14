@@ -10,4 +10,7 @@ bot.onText(/\/rating/, msg => {
     bot.sendMessage(msg.chat.id, 'Choose the Movies according to ratings', opts)
 })
 
-bot.on('callback_query')
+/*bot.on('callback_query', msg => {
+    const message = msg.data;
+    console.log(message.data.query)
+})*/

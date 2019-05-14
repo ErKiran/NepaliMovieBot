@@ -4,3 +4,4 @@ require('./bots/movie');
 require('./bots/rating');
 require('./bots/callback_query');
 require('./bots/pagination');
+require('./bots/test')
