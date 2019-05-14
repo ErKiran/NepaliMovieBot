@@ -1,6 +1,6 @@
 const NepaliMovie = require('./db');
 
-function getDistinctGenre() {
+/*function getDistinctGenre() {
     let genre = [];
     genre = NepaliMovie.map(i => i.genre)
     const isthis = [... new Set(genre)]
@@ -15,5 +15,6 @@ function getDistinctGenre() {
     console.log(yu)
     return genre;
 }
+*/
 
 getDistinctGenre()

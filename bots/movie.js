@@ -11,7 +11,7 @@ bot.onText(/\/movie (.+)/, async (msg, match) => {
         bot.sendMessage(msg.chat.id, `<b>${movie[0].title}</b>
         \n Year: ${movie[0].year}
         The Runtime of the movie is ${movie[0].runtime}
-        ${movie[0].title} has got <b>${movie[0].rating}</b> rating  amongs the <b>${movie[0].votes}</b>
+        ${movie[0].title} has got <b>${movie[0].rating}</b> rating  amongs the <b>${movie[0].votes}</b> numbers of vote
         Plot of the movie
         <b>${movie[0].plot}</b>
         If you are intersted about it you can further check on it ${movie[0].imdb_url}

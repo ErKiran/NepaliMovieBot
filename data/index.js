@@ -20,8 +20,8 @@ module.exports = {
         return NepaliMovie.filter(i => i.votes >= votes)
     },
 
-    rating: function getMoviesByRating(rates) {
-        return NepaliMovie.filter(i => i.rating >= rates)
+    moviesbyrating: function getMoviesByRating(rates) {
+        return NepaliMovie.filter(i => i.rating > rates && i.rating < rates + 1)
     },
 
     name: function getMovieByName(name) {
