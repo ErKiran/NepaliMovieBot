@@ -17,7 +17,19 @@ module.exports = {
     },
 
     vote: function getMoviesByVote(votes) {
-        return NepaliMovie.filter(i => i.votes >= votes)
+        if (votes == 100) {
+            return NepaliMovie.filter(i => i.votes <= votes && i.votes > votes - 100)
+        }
+        else if (votes == 250) {
+            return NepaliMovie.filter(i => i.votes <= votes && i.votes > votes - 150)
+        }
+        else if (votes == 500) {
+            return NepaliMovie.filter(i => i.votes <= votes && i.votes > votes - 250)
+        }
+        else {
+            return NepaliMovie.filter(i => i.votes > votes)
+        }
+
     },
 
     moviesbyrating: function getMoviesByRating(rates) {
@@ -37,7 +49,13 @@ module.exports = {
                 return (i.runtime).replace(/^\D+/g, '') >= time;
             }
         })
+    },
+    recommend: function recommend() {
+        return NepaliMovie.filter(i =>
+            i.rating > 6.0 && i.votes > 150
+        )
     }
+
 }
 
 

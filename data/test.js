@@ -16,5 +16,10 @@ const NepaliMovie = require('./db');
     return genre;
 }
 */
+function recommend() {
+    return NepaliMovie.filter(i =>
+        /*i.rating > 6.0 &&*/(i.votes > 80 && i.rating > 7.0)
+    )
+}
 
-getDistinctGenre()
+console.log(recommend())
