@@ -1,9 +1,9 @@
 const bot = require('./bot').bot;
-const data = require('../data/index');
+const database = require('../data/index');
 
 bot.onText(/\/movie (.+)/, async (msg, match) => {
     const res = match[1];
-    const movie = await data.name(res);
+    const movie = await database.name(res);
     if (movie === undefined || movie.length == 0) {
         bot.sendMessage(msg.chat.id, `Sorry! We are unable to find ${res} in our Database`)
     }
@@ -20,7 +20,31 @@ bot.onText(/\/movie (.+)/, async (msg, match) => {
 })
 
 bot.onText(/\/movie/, msg => {
+
     bot.sendMessage(msg.chat.id, `Try / movie Movie_Name to get Detail Info of the movie`)
 })
 
 
+bot.on('callback_query', query => {
+    const chatId = query.from.id;
+    let data;
+    try {
+        data = JSON.parse(query.data)
+    } catch (e) {
+        throw new Error('Data is not an object')
+    }
+    switch (true) {
+        case database.allmoviename().includes(data.query):
+            const movie = database.name(data.query);
+            bot.sendMessage(chatId, `
+             <b>${movie[0].title}</b>
+             Year: ${movie[0].year}
+             ⌚: ${movie[0].runtime}
+             ⭐ : <b>${movie[0].rating}</b>
+             🗳:  <b>${movie[0].votes}</b>
+             Plot of the movie
+             <b>${movie[0].plot}</b>
+             If you are intersted about it you can further check on it ${movie[0].imdb_url}
+         `, { parse_mode: 'HTML' });
+    }
+})

@@ -11,11 +11,9 @@ module.exports = {
     genrebyname: function getMoviesByGenre(genre) {
         return NepaliMovie.filter(i => i.genre == genre)
     },
-
     year: function getMoviesByYear(year) {
         return NepaliMovie.filter(i => i.year == year)
     },
-
     vote: function getMoviesByVote(votes) {
         if (votes == 100) {
             return NepaliMovie.filter(i => i.votes <= votes && i.votes > votes - 100)
@@ -54,6 +52,9 @@ module.exports = {
         return NepaliMovie.filter(i =>
             i.rating > 6.0 && i.votes > 150
         )
+    },
+    allmoviename: function getallMoviename() {
+        return NepaliMovie.map(i => i.title)
     }
 
 }

@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/ErKiran/NepaliMovieBot#readme",
   "dependencies": {
-    "node-telegram-bot-api": "^0.30.0"
+    "node-telegram-bot-api": "^0.30.0",
+    "python-shell": "^1.0.7"
   }
 }
