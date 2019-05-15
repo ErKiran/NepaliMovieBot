@@ -4,4 +4,7 @@ require('./bots/movie');
 require('./bots/rating');
 require('./bots/callback_query');
 require('./bots/pagination');
-require('./bots/test')
+require('./bots/test');
+require('./bots/year');
+require('./bots/votes');
+require('./bots/recommend_me');

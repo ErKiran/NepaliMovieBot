@@ -3,8 +3,8 @@ module.exports = {
         resize_keyboard: true,
         keyboard: [
             ['🎬 /movie', '🔘 /genre'],
-            ['👍 /rating', '🗳️ /votes'],
-            ['🌞 /Year'],
+            ['⭐ /rating', '🗳️ /votes'],
+            ['🌞 /year', '/recommend_me'],
             ['ℹ️ /help'],
         ]
     },
@@ -67,6 +67,37 @@ module.exports = {
                     query: 'star_9'
                 })
             },],
+
+        ]
+    },
+    movie_voting: {
+        inline_keyboard: [
+            [{
+                text: '0-100',
+                callback_data: JSON.stringify({
+                    query: 'vote_100'
+                })
+            },
+            {
+                text: '100-250',
+                callback_data: JSON.stringify({
+                    query: 'vote_250'
+                })
+            },
+            ],
+            [{
+                text: '250-500',
+                callback_data: JSON.stringify({
+                    query: 'vote_500'
+                })
+            },
+            {
+                text: '500+',
+                callback_data: JSON.stringify({
+                    query: 'vote_501'
+                })
+            },
+            ],
 
         ]
     },

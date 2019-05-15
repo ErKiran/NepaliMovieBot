@@ -53,13 +53,34 @@ bot.on('callback_query', query => {
             var editOptions = Object.assign({}, getPagination.page(parseInt(data.query), bookPages), { chat_id: chatId, message_id: messageId });
             bot.editMessageText('Page: ' + data.query, editOptions);
             break
+        case 'vote_100':
+        case 'vote_250':
+        case 'vote_500':
+        case 'vote_501':
+            const votes = parseInt((data.query).substring(5, 8));
+            const voted_movies = db.vote(votes);
+            console.log(voted_movies)
+
+            bot.sendMessage(chatId, 'Here', {
+                reply_markup: {
+                    inline_keyboard: voted_movies.map((obj) => ([{
+                        text: obj.title,
+                        callback_data: JSON.stringify({
+                            query: `${obj.title}`
+                        })
+                    }])),
+                }
+            })
+            break
         default:
             const moviename = data.query
             const movie = db.name(moviename);
-            bot.sendMessage(chatId, `<b>${movie[0].title}</b>
-            \n Year: ${movie[0].year}
-            The Runtime of the movie is ${movie[0].runtime}
-            ${movie[0].title} has got <b>${movie[0].rating}</b> rating  amongs the <b>${movie[0].votes}</b> numbers of vote
+            bot.sendMessage(chatId, `
+            <b>${movie[0].title}</b>
+            Year: ${movie[0].year}
+            ⌚: ${movie[0].runtime}
+            ⭐ : <b>${movie[0].rating}</b>   
+            🗳:  <b>${movie[0].votes}</b> 
             Plot of the movie
             <b>${movie[0].plot}</b>
             If you are intersted about it you can further check on it ${movie[0].imdb_url}
