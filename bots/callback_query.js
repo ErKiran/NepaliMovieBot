@@ -1,6 +1,7 @@
 const bot = require('./bot').bot;
 const db = require('../data/index');
-
+const pagi = require('../helpers/pagination');
+let exp = {};
 
 bot.on('callback_query', query => {
     const chatId = query.from.id;
@@ -59,17 +60,40 @@ bot.on('callback_query', query => {
         case 'vote_500':
         case 'vote_501':
             const votes = parseInt((data.query).substring(5, 8));
+            exp.vote = votes;
             const voted_movies = db.vote(votes);
-            bot.sendMessage(chatId, 'Here', {
-                reply_markup: {
-                    inline_keyboard: voted_movies.map((obj) => ([{
-                        text: obj.title,
-                        callback_data: JSON.stringify({
-                            query: `${obj.title}`
-                        })
-                    }])),
-                }
-            })
+            const total_len = Object.keys(voted_movies).length;
+            const pages = total_len / 15;
+            if (pages > 1) {
+                bot.sendMessage(chatId, `Here is the List`, {
+                    reply_markup: {
+                        inline_keyboard: voted_movies.slice(0, Math.round(pages)).map((obj) => ([{
+                            text: obj.title,
+                            callback_data: JSON.stringify({
+                                query: `${obj.title}`
+                            })
+                        }])),
+                    }
+                })
+
+                exp.bookpage = Math.round(pages);
+                setTimeout(function () { bot.sendMessage(chatId, 'Page: 1', pagi.getPagination(1, exp.bookpage)) }, 500);
+            }
+            else {
+                bot.sendMessage(chatId, 'Here', {
+                    reply_markup: {
+                        inline_keyboard: voted_movies.map((obj) => ([{
+                            text: obj.title,
+                            callback_data: JSON.stringify({
+                                query: `${obj.title}`
+                            })
+                        }])),
+                    }
+                })
+            }
             break
     }
 })
+module.exports = {
+    exp
+}
