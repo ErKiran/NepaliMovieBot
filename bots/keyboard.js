@@ -13,19 +13,19 @@ module.exports = {
             [{
                 text: '1+',
                 callback_data: JSON.stringify({
-                    query: 'star_1'
+                    query: 1001
                 })
             },
             {
                 text: '2+',
                 callback_data: JSON.stringify({
-                    query: 'star_2'
+                    query: 1002
                 })
             },
             {
                 text: '3+',
                 callback_data: JSON.stringify({
-                    query: 'star_3'
+                    query: 1003
                 })
             },
 
@@ -33,38 +33,38 @@ module.exports = {
             [{
                 text: '4+',
                 callback_data: JSON.stringify({
-                    query: 'star_4'
+                    query: 1004
                 })
             },
             {
                 text: '5+',
                 callback_data: JSON.stringify({
-                    query: 'star_5'
+                    query: 1005
                 })
             },
             {
                 text: '6+',
                 callback_data: JSON.stringify({
-                    query: 'star_6'
+                    query: 1006
                 })
             },
             ],
             [{
                 text: '7+',
                 callback_data: JSON.stringify({
-                    query: 'star_7'
+                    query: 1007
                 })
             },
             {
                 text: '8+',
                 callback_data: JSON.stringify({
-                    query: 'star_8'
+                    query: 1008
                 })
             },
             {
                 text: '9+',
                 callback_data: JSON.stringify({
-                    query: 'star_9'
+                    query: 1009
                 })
             },],
 
@@ -75,26 +75,26 @@ module.exports = {
             [{
                 text: '0-100',
                 callback_data: JSON.stringify({
-                    query: 'vote_100'
+                    query: 5100
                 })
             },
             {
                 text: '100-250',
                 callback_data: JSON.stringify({
-                    query: 'vote_250'
+                    query: 5250
                 })
             },
             ],
             [{
                 text: '250-500',
                 callback_data: JSON.stringify({
-                    query: 'vote_500'
+                    query: 5500
                 })
             },
             {
                 text: '500+',
                 callback_data: JSON.stringify({
-                    query: 'vote_501'
+                    query: 5501
                 })
             },
             ],

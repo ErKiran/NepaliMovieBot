@@ -2,7 +2,7 @@
 module.exports = {
     getPagination: function getPagination(current, maxpage) {
         var keys = [];
-        if (current > 1) keys.push({ text: `«previous`, callback_data: '1' });
+        if (current > 1) keys.push({ text: `«1`, callback_data: '1' });
         if (current > 2) keys.push({ text: `‹${current - 1}`, callback_data: (current - 1).toString() });
         keys.push({ text: `-${current}-`, callback_data: current.toString() });
         if (current < maxpage - 1) keys.push({ text: `${current + 1}›`, callback_data: (current + 1).toString() })

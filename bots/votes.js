@@ -9,4 +9,3 @@ bot.onText(/\/votes/, msg => {
     };
     bot.sendMessage(msg.chat.id, 'Choose the Movies according to number of voting', opts)
 })
-
