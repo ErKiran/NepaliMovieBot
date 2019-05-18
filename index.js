@@ -8,3 +8,4 @@ require('./bots/test');
 require('./bots/year');
 require('./bots/votes');
 require('./bots/recommend_me');
+require('./bots/contact');

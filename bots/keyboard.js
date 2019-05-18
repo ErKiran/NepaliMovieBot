@@ -101,4 +101,11 @@ module.exports = {
 
         ]
     },
+    contact_keyboard: {
+        resize_keyboard: true,
+        one_time_keyboard: true,
+        keyboard: [
+            [{ text: "☎️Contact", request_contact: true }]
+        ],
+    }
 }
